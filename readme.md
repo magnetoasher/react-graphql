@@ -1,6 +1,4 @@
-![graphql-react logo](https://cdn.jsdelivr.net/gh/jaydenseric/graphql-react@0.1.0/graphql-react-logo.svg)
-
-# graphql-react
+# react-graphql
 
 A [GraphQL](https://graphql.org) client for [React](https://reactjs.org) using modern [context](https://reactjs.org/docs/context) and [hooks](https://reactjs.org/docs/hooks-intro) APIs that’s lightweight (< 4 kB) but powerful; the first [Relay](https://relay.dev) and [Apollo](https://apollographql.com/apollo-client) alternative with server side rendering.
 
@@ -48,11 +46,8 @@ Polyfill any required globals (see [_**Requirements**_](#requirements)) that are
 
 Create a single [`Cache`](#class-cache) instance and use the [`Provider`](#function-dataprovider) component to provide it for your app.
 
-To server side render your app, use the [`waterfallRender`](https://github.com/jaydenseric/react-waterfall-render#function-waterfallrender) function from [`react-waterfall-render`](https://npm.im/react-waterfall-render).
-
 ## Examples
 
-- [`graphql-react` examples repo](https://github.com/jaydenseric/graphql-react-examples), a [Deno](https://deno.land) [Ruck](https://ruck.tech) web app deployed at [graphql-react-examples.fly.dev](https://graphql-react-examples.fly.dev).
 - [Official Next.js example](https://github.com/vercel/next.js/tree/canary/examples/with-graphql-react) (often outdated as the Next.js team can be extremely slow to review and merge pull requests).
 
 Here is a basic example using the [GitHub GraphQL API](https://docs.github.com/en/graphql), with tips commented:
@@ -122,9 +117,7 @@ export default function GitHubRepoStars({ repoId }) {
   useAutoLoad(cacheKey, load);
 
   // Waterfall loading can be used to load data when server side rendering,
-  // enabled automagically by `next-graphql-react`. To learn how this works or
-  // to set it up for a non-Next.js app, see:
-  // https://github.com/jaydenseric/react-waterfall-render
+  // enabled automagically by `next-graphql-react`.
   const isWaterfallLoading = useWaterfallLoad(cacheKey, load);
 
   // When waterfall loading it’s efficient to skip rendering, as the app will
@@ -172,8 +165,6 @@ Non [Deno](https://deno.land) projects must configure [TypeScript](https://types
 - [`compilerOptions.module`](https://typescriptlang.org/tsconfig#module) should be `"node16"` or `"nodenext"`.
 
 ## Exports
-
-The [npm](https://npmjs.com) package [`graphql-react`](https://npm.im/graphql-react) features [optimal JavaScript module design](https://jaydenseric.com/blog/optimal-javascript-module-design). It doesn’t have a main index module, so use deep imports from the ECMAScript modules that are exported via the [`package.json`](./package.json) field [`exports`](https://nodejs.org/api/packages.html#exports):
 
 - [`Cache.mjs`](./Cache.mjs)
 - [`CacheContext.mjs`](./CacheContext.mjs)

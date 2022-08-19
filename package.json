@@ -1,17 +1,12 @@
 {
-  "name": "graphql-react",
+  "name": "react-graphql",
   "version": "19.0.0",
   "description": "A GraphQL client for React using modern context and hooks APIs that’s lightweight (< 4 kB) but powerful; the first Relay and Apollo alternative with server side rendering.",
   "license": "MIT",
-  "author": {
-    "name": "Jayden Seric",
-    "email": "me@jaydenseric.com",
-    "url": "https://jaydenseric.com"
-  },
-  "repository": "github:jaydenseric/graphql-react",
-  "homepage": "https://github.com/jaydenseric/graphql-react#readme",
-  "bugs": "https://github.com/jaydenseric/graphql-react/issues",
-  "funding": "https://github.com/sponsors/jaydenseric",
+  "repository": "github:magnetoasher/react-graphql",
+  "homepage": "https://github.com/magnetoasher/react-graphql#readme",
+  "bugs": "https://github.com/magnetoasher/react-graphql/issues",
+  "funding": "https://github.com/sponsors/magnetoasher",
   "keywords": [
     "graphql",
     "client",

@@ -8,9 +8,6 @@ import isExtractableFile from "extract-files/isExtractableFile.mjs";
 /**
  * Creates default {@link RequestInit `fetch` options} for a
  * {@link GraphQLOperation GraphQL operation}. If the operation contains files
- * to upload, the options will be for a
- * [GraphQL multipart request](https://github.com/jaydenseric/graphql-multipart-request-spec),
- * otherwise they will be for a regular
  * [GraphQL `POST` request](https://github.com/graphql/graphql-over-http/blob/main/spec/GraphQLOverHTTP.md#post).
  *
  * This utility exists for convenience in projects and isn’t used directly by
@@ -32,9 +29,6 @@ export default function fetchOptionsGraphQL(operation) {
   const operationJSON = JSON.stringify(clone);
 
   if (files.size) {
-    // See the GraphQL multipart request spec:
-    // https://github.com/jaydenseric/graphql-multipart-request-spec
-
     const form = new FormData();
 
     form.set("operations", operationJSON);

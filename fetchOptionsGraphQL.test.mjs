@@ -41,9 +41,6 @@ export default (tests) => {
         variables: { a: new File(["a"], fileName) },
       });
 
-      // See the GraphQL multipart request spec:
-      // https://github.com/jaydenseric/graphql-multipart-request-spec
-
       strictEqual(options.method, "POST");
       deepStrictEqual(options.headers, { Accept: "application/json" });
       assertInstanceOf(options.body, FormData);
